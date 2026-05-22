@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-primary:   hsl(40, 25%, 96%);
+    --bg-secondary: hsl(38, 20%, 98%);
+    --bg-card:      hsl(0, 0%, 100%);
+    --bg-elevated:  hsl(40, 22%, 94%);
+    --border:       hsl(35, 20%, 88%);
+    --border-light: hsl(35, 18%, 82%);
+    --text-primary: hsl(20, 20%, 13%);
+    --text-muted:   hsl(20, 10%, 46%);
+    --text-faint:   hsl(20, 8%, 62%);
+    --gold:         hsl(38, 72%, 38%);
+    --gold-light:   hsl(42, 85%, 55%);
+    --gold-dark:    hsl(32, 80%, 30%);
+    --silver:       hsl(200, 15%, 48%);
+    --green:        hsl(152, 50%, 35%);
+    --red:          hsl(0, 68%, 48%);
+    --blue:         hsl(210, 82%, 48%);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+  }
+
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg-secondary); }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+}
+
+@layer components {
+  .card {
+    @apply rounded-xl border bg-[var(--bg-card)] border-[var(--border)] shadow-card;
+  }
+  .card-hover {
+    @apply transition-all duration-200 hover:shadow-card-hover hover:border-[var(--border-light)];
+  }
+  .btn-gold {
+    @apply inline-flex items-center gap-2 px-4 py-2.5 rounded-lg font-body font-medium text-sm
+           bg-gold-shimmer text-slate-950 transition-all duration-200
+           hover:opacity-90 hover:shadow-gold-glow active:scale-[0.98]
+           disabled:opacity-40 disabled:cursor-not-allowed;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 px-4 py-2.5 rounded-lg font-body font-medium text-sm
+           text-[var(--text-muted)] border border-[var(--border)] bg-[var(--bg-card)]
+           hover:bg-[var(--bg-elevated)] hover:text-[var(--text-primary)] hover:border-[var(--border-light)]
+           transition-all duration-200 active:scale-[0.98];
+  }
+  .btn-danger {
+    @apply inline-flex items-center gap-2 px-4 py-2.5 rounded-lg font-body font-medium text-sm
+           bg-red-50 text-red-700 border border-red-200
+           hover:bg-red-100 hover:border-red-300 transition-all duration-200;
+  }
+  .input {
+    @apply w-full rounded-lg border border-[var(--border)] bg-[var(--bg-card)]
+           px-3.5 py-2.5 text-sm text-[var(--text-primary)] placeholder:text-[var(--text-faint)]
+           focus:outline-none focus:border-[var(--gold)] focus:ring-1 focus:ring-yellow-400/20
+           transition-all duration-150;
+  }
+  .label {
+    @apply block text-xs font-medium text-[var(--text-muted)] uppercase tracking-wider mb-1.5;
+  }
+  .badge {
+    @apply inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium;
+  }
+  .stat-card {
+    @apply card p-5 flex flex-col gap-1;
+  }
+  .section-title {
+    @apply font-body text-2xl font-semibold text-[var(--text-primary)];
+  }
+  .divider {
+    @apply border-t border-[var(--border)] my-4;
+  }
+  .gold-text {
+    @apply bg-gold-shimmer bg-clip-text text-transparent;
+  }
+}
+
+/* Stagger animation utility */
+.stagger > * { opacity: 0; animation: slideUp 0.4s cubic-bezier(0.16,1,0.3,1) forwards; }
+.stagger > *:nth-child(1) { animation-delay: 0ms; }
+.stagger > *:nth-child(2) { animation-delay: 60ms; }
+.stagger > *:nth-child(3) { animation-delay: 120ms; }
+.stagger > *:nth-child(4) { animation-delay: 180ms; }
+.stagger > *:nth-child(5) { animation-delay: 240ms; }
+.stagger > *:nth-child(6) { animation-delay: 300ms; }
+.stagger > *:nth-child(n+7) { animation-delay: 360ms; }
