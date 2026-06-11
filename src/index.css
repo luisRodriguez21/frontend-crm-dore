@@ -4,6 +4,16 @@
 @tailwind components;
 @tailwind utilities;
 
+.bg-rose-shimmer {
+  background-image: linear-gradient(
+    135deg,
+    #b85e58 0%,
+    #ce6f69 45%,
+    #e6a39d 70%,
+    #b85e58 100%
+  );
+}
+
 @layer base {
   :root {
     --bg-primary:   hsl(40, 25%, 96%);
@@ -41,6 +51,9 @@
   ::-webkit-scrollbar-thumb:hover { background: var(--gold); }
 }
 
+background-image: linear gradient(135deg, hsl(4.12deg 57.79% 75.39%) 0%, hsl(4.12deg 51% 60.78%) 50%, hsl(4.12deg 100% 82.14%) 100%);
+
+
 @layer components {
   .card {
     @apply rounded-xl border bg-[var(--bg-card)] border-[var(--border)] shadow-card;
@@ -54,6 +67,14 @@
            hover:opacity-90 hover:shadow-gold-glow active:scale-[0.98]
            disabled:opacity-40 disabled:cursor-not-allowed;
   }
+
+.btn-pink {
+  @apply inline-flex items-center gap-2 px-4 py-2.5 rounded-lg font-body font-medium text-sm
+         bg-rose-shimmer text-slate-950 transition-all duration-200
+         hover:opacity-90 hover:shadow-lg active:scale-[0.98]
+         disabled:opacity-40 disabled:cursor-not-allowed;
+}
+
   .btn-ghost {
     @apply inline-flex items-center gap-2 px-4 py-2.5 rounded-lg font-body font-medium text-sm
            text-[var(--text-muted)] border border-[var(--border)] bg-[var(--bg-card)]

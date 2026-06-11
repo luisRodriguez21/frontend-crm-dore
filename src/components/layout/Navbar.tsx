@@ -104,7 +104,7 @@ export default function Navbar() {
         {/* Logo */}
         <div className="flex items-center gap-2.5 px-5 w-56 shrink-0 border-r border-[var(--border)] h-full">
           <div className="w-7 h-7 rounded-lg bg-[#ce6f69] flex items-center justify-center shadow-gold-glow">
-            <img src="../public/logo.png" />
+            <img src="/logo.png" />
           </div>
           <div className="leading-tight">
             <p className="font-body text-sm font-bold text-[var(--text-primary)] leading-none">JOYERÍA DORÉ</p>

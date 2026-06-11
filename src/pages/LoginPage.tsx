@@ -58,18 +58,18 @@ export default function LoginPage() {
 
         <div className="relative card border-[var(--border-light)] overflow-hidden">
           {/* Gold top accent */}
-          <div className="h-[2px] bg-gold-shimmer" />
+          <div className="h-[2px] bg-[#ce6f69]" />
 
           <div className="p-8">
             {/* Logo */}
             <div className="flex flex-col items-center mb-8">
-              <div className="w-14 h-14 rounded-2xl bg-gold-shimmer flex items-center justify-center shadow-gold-glow mb-4 animate-pulse-gold">
-                <Gem size={26} className="text-slate-950" />
+              <div className="w-14 h-14 rounded-2xl bg-[#ce6f69] flex items-center justify-center shadow-pink-glow mb-4 animate-pulse-pink">
+                <img src="/logo.png" />
               </div>
-              <h1 className="font-display text-3xl pb-2 font-bold text-[var(--text-primary)] tracking-tight">
+              <h1 className="font-display text-4xl pb-2 font-bold text-[var(--text-primary)] tracking-tight">
                 Iniciar sesión
               </h1>
-              <p className="text-[var(--text-faint)] text-xs uppercase tracking-[0.2em] mt-1">
+              <p className="text-[var(--text-faint)] text-s uppercase tracking-[0.2em] mt-1">
                 Joyería · Doré
               </p>
             </div>
@@ -120,7 +120,7 @@ export default function LoginPage() {
               <button
                 type="submit"
                 disabled={loading || !email || !password}
-                className="btn-gold w-full justify-center py-3 mt-2 text-sm font-semibold"
+                className="btn-pink w-full justify-center py-3 mt-2 text-sm font-semibold"
               >
                 {loading
                   ? <><Loader2 size={15} className="animate-spin" /> Verificando...</>
