@@ -40,9 +40,9 @@ function ClientForm({ initial, onSave, onCancel }: {
     } finally { setLoading(false); }
   }
 
-  const F = ({ label, children }: { label: string; children: React.ReactNode }) => (
-    <div><label className="label">{label}</label>{children}</div>
-  );
+  /* const F = ({ label, children }: { label: string; children: React.ReactNode }) => (
+     <div><label className="label">{label}</label>{children}</div>
+   ); */
 
   return (
     <form onSubmit={handleSubmit} className="p-6 space-y-4">

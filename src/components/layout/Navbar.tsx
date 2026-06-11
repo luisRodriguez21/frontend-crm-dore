@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import {
   LayoutDashboard, ShoppingBag, Users, Package, Settings,
-  LogOut, TrendingUp, TrendingDown, Menu, X, Gem, ChevronDown
+  LogOut, TrendingUp, TrendingDown, Menu, X, ChevronDown
 } from 'lucide-react';
 import { metalPriceApi } from '../../api/services';
 import { useAuth } from '../../store/AuthContext';
