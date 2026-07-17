@@ -14,6 +14,14 @@
   );
 }
 
+.bg-rose-soft {
+  background-image: linear-gradient(
+    180deg,
+    #d9827c 0%,
+    #ce6f69 100%
+  );
+}
+
 @layer base {
   :root {
     --bg-primary:   hsl(40, 25%, 96%);
@@ -64,6 +72,27 @@
            hover:opacity-90 hover:shadow-gold-glow active:scale-[0.98]
            disabled:opacity-40 disabled:cursor-not-allowed;
   }
+
+.btn-pink {
+  @apply inline-flex items-center gap-2 px-4 py-2.5 rounded-lg font-body font-medium text-sm
+         bg-rose-shimmer text-slate-950 transition-all duration-200
+         hover:opacity-90 hover:shadow-lg active:scale-[0.98]
+         disabled:opacity-40 disabled:cursor-not-allowed;
+}
+
+.btn-rose-soft {
+  @apply inline-flex items-center gap-2 px-3 py-2 rounded-lg
+         font-body font-medium text-sm text-white
+         transition-all duration-200
+         hover:brightness-95 hover:shadow-md
+         active:scale-[0.98]
+         disabled:opacity-40 disabled:cursor-not-allowed;
+  background-image: linear-gradient(
+    180deg,
+    #d9827c 0%,
+    #ce6f69 100%
+  );
+}
 
 .btn-pink {
   @apply inline-flex items-center gap-2 px-4 py-2.5 rounded-lg font-body font-medium text-sm
